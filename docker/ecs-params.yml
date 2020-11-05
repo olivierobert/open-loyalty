@@ -1,0 +1,16 @@
+version: 1
+task_definition:
+  task_execution_role: openLoyaltyEcsTaskExecutionRole
+  ecs_network_mode: awsvpc
+  task_size:
+    mem_limit: 1GB
+    cpu_limit: 512
+run_params:
+  network_configuration:
+    awsvpc_configuration:
+      subnets:
+        - "subnet-0868da57fea485af1"
+        - "subnet-08e72d45eb6690d4e"
+      security_groups:
+        - "sg-0154fec3fe8736633"
+      assign_public_ip: ENABLED
